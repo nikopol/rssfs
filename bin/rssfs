@@ -1,0 +1,24 @@
+#!/bin/bash
+
+RSSFSPATH="$(cd $(dirname $0)/..;pwd)"
+RSSFSJAR="$RSSFSPATH/target/rssfs-0.1.0-SNAPSHOT-standalone.jar"
+
+function die {
+	[[ -z $* ]] || echo $*
+	exit 1
+}
+
+if [[ -z "`which java`" ]]; then
+	die "java not found"
+elif [[ -z "`which lein`" ]]; then
+	die "lein not found ( http://leiningen.org/ )\nyou have to install it or manually build rssfs with lein uberjar"
+elif [[ ! -f $RSSFSJAR ]]; then
+	echo "build $RSSFSJAR"
+	cd $RSSFSPATH
+	lein uberjar
+	if [[ ! -f $RSSFSJAR ]]; then
+		die "error building rssfs"
+	fi
+fi
+
+java -jar $RSSFSJAR $*
