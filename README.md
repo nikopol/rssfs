@@ -6,18 +6,18 @@ generate a rss with the most recents files in the given path[s]
 
 bin/rssfs --help
 
-> syntax: 
-> rssls [path] [options] 
->
-> by defaut current path is used
->
-> options: 
->   -s, --size int     20  rss items count 
->   -o, --output file      write rss in the given file 
->   -c, --conf file        config file 
->   -v, --verbose          more blah blah 
->   -d, --dump             debug dump 
->   -h, --help 
+    syntax: 
+    rssls [path] [options] 
+    
+    by defaut current path is used
+    
+    options: 
+      -s, --size int     20  rss items count 
+      -o, --output file      write rss in the given file 
+      -c, --conf file        config file 
+      -v, --verbose          more blah blah 
+      -d, --dump             debug dump 
+      -h, --help 
 
 see conf/sample.clj for more options
 
