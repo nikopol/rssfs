@@ -1,4 +1,4 @@
-# rssfs
+# RSSFS
 
 generate a rss with the most recents files in the given path[s]
 
