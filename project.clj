@@ -1,5 +1,5 @@
 (defproject rssfs "0.1.0-SNAPSHOT"
-  :description "generate a rss of last file of dirs"
+  :description "generate a rss of last file of given path[s]"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
