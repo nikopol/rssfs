@@ -17,8 +17,8 @@
     (< size 2048)          (str size)
     (< size 1024000)       (format "%.0fk" (Math/floor (/ size 1024)))
     (< size 1024000000)    (format "%.0fM" (Math/floor (/ size 1024000)))
-    (< size 1024000000000) (format "%.0fG" (Math/floor (/ size 1024000000)))
-    :else                  (format "%.0fT" (Math/floor (/ size 1024000000000)))))
+    (< size 1024000000000) (format "%.1fG" (Math/floor (/ size 1024000000)))
+    :else                  (format "%.1fT" (Math/floor (/ size 1024000000000)))))
 
 
 (defn scandir
@@ -71,9 +71,11 @@
 
 (defn help
   [options-summary]
-  (->> ["fill up projects querying their sources to the warmup\n"
+  (->> [(str "RSS-FS v" VERSION)
+        "generate a rss with the most recents files in the given path[s]\n"
         "syntax:"
         "rssls [path] [options]\n"
+        "by defaut current path is used\n"
         "options:"
         options-summary]
        (str/join \newline)))
